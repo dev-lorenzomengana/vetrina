@@ -5,12 +5,12 @@ export default function Footer() {
         <div className="flex items-center justify-center space-x-2 mb-4">
           <span className="text-2xl">🦥</span>
           <span className="text-light-brown font-medium">
-            © SleepyLore 2025 — Fatto con lentezza e amore
+            © sleepylore 2025 — Creato con dedizione e passione
           </span>
           <span className="text-2xl">🦥</span>
         </div>
         <p className="text-sm text-light-brown/80">
-          Handmade charms & accessories • Made in Italy with care
+          Accessori artigianali • Made in Italy
         </p>
       </div>
     </footer>

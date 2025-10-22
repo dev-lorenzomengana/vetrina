@@ -27,8 +27,8 @@ export default function Home() {
               <div className="flex justify-center mb-6">
                 <div className="relative w-24 h-24 sm:w-32 sm:h-32 animate-float">
                   <Image
-                    src="/images/sleepylore.png"
-                    alt="SleepyLore"
+                    src="/images/ico.png"
+                    alt="sleepylore"
                     fill
                     className="object-contain"
                     priority
@@ -36,10 +36,10 @@ export default function Home() {
                 </div>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4">
-                SleepyLore <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl">🦥</span>
+                sleepylore <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl">🦥</span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto px-4">
-                Cute handmade charms & accessories
+                Accessori handmade unici e di qualità
               </p>
             </div>
             
@@ -49,7 +49,7 @@ export default function Home() {
                 onClick={() => scrollToSection('gallery')}
                 className="btn-secondary text-lg px-8 py-4"
               >
-                Scopri le creazioni ✨
+                Scopri le creazioni
               </button>
             </div>
           </div>
@@ -63,20 +63,21 @@ export default function Home() {
             {/* Testo */}
             <div className="order-2 md:order-1 space-y-6">
               <h2 className="text-3xl sm:text-4xl font-bold text-brown mb-6">
-                Chi sono 🦥
+                Chi sono
               </h2>
               <div className="space-y-4 text-brown/80 text-lg leading-relaxed">
                 <p>
-                  Ciao! Sono <strong className="text-brown">SleepyLore</strong> — creo portachiavi, 
-                  ciondoli e spillette ispirati ad anime, musica e videogiochi.
+                  Ciao! Sono <strong className="text-brown">sleepylore</strong> — creo accessori artigianali 
+                  ispirati al mondo degli anime, della musica e dei videogiochi.
                 </p>
                 <p>
-                  Ogni pezzo è fatto a mano con lentezza e tanto amore, 
-                  proprio come piace a noi bradipi! 🦥
+                  Ogni pezzo è realizzato a mano con cura e attenzione ai dettagli, 
+                  seguendo il mio ritmo naturale che rispecchia la filosofia del bradipo: 
+                  lentezza consapevole e qualità duratura.
                 </p>
                 <p>
-                  Dalle kawaii creazioni anime ai simboli musicali, 
-                  ogni accessorio racconta una piccola storia cute.
+                  Dalle creazioni ispirate agli anime ai simboli musicali, 
+                  ogni accessorio è pensato per esprimere la tua personalità unica.
                 </p>
               </div>
             </div>
@@ -86,7 +87,7 @@ export default function Home() {
               <div className="relative h-64 sm:h-80 md:h-96 bg-gradient-to-br from-beige/30 to-aqua/20 rounded-3xl flex items-center justify-center shadow-lg">
                 <div className="text-center">
                   <div className="text-6xl mb-4 animate-float">🦥</div>
-                  <p className="text-brown font-medium">Foto di SleepyLore</p>
+                  <p className="text-brown font-medium">Foto di sleepylore</p>
                   <p className="text-sm text-brown/60">Coming soon...</p>
                 </div>
               </div>
@@ -100,11 +101,11 @@ export default function Home() {
         <div className="container-mobile">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-brown mb-4">
-              Le mie creazioni ✨
+              Le mie creazioni
             </h2>
             <p className="text-brown/70 text-lg max-w-2xl mx-auto">
-              Una piccola collezione dei miei lavori kawaii, 
-              fatti con amore e ispirazione pop culture
+              Una selezione dei miei lavori artigianali, 
+              realizzati con passione e ispirazione dalla cultura pop
             </p>
           </div>
           
@@ -112,8 +113,8 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <GalleryCard 
               imageSrc="/images/charm1.jpg" 
-              alt="Charm anime kawaii" 
-              title="Charm Anime Kawaii" 
+              alt="Accessorio anime" 
+              title="Accessorio Anime" 
             />
             <GalleryCard 
               imageSrc="/images/charm2.jpg" 
@@ -127,28 +128,28 @@ export default function Home() {
             />
             <GalleryCard 
               imageSrc="/images/charm4.jpg" 
-              alt="Ciondolo cute" 
-              title="Ciondolo Cute" 
+              alt="Ciondolo artigianale" 
+              title="Ciondolo Artigianale" 
             />
             <GalleryCard 
               imageSrc="/images/charm5.jpg" 
-              alt="Accessorio pop" 
+              alt="Accessorio pop culture" 
               title="Accessorio Pop" 
             />
             <GalleryCard 
               imageSrc="/images/charm6.jpg" 
-              alt="Charm special" 
-              title="Charm Special" 
+              alt="Charm personalizzato" 
+              title="Charm Personalizzato" 
             />
             <GalleryCard 
               imageSrc="/images/charm7.jpg" 
-              alt="Portachiavi dream" 
-              title="Portachiavi Dream" 
+              alt="Portachiavi tematico" 
+              title="Portachiavi Tematico" 
             />
             <GalleryCard 
               imageSrc="/images/charm8.jpg" 
-              alt="Creazione kawaii" 
-              title="Creazione Kawaii" 
+              alt="Creazione originale" 
+              title="Creazione Originale" 
             />
           </div>
         </div>
@@ -159,10 +160,10 @@ export default function Home() {
         <div className="container-mobile">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-brown mb-4">
-              Dove trovarmi 🛍️
+              Dove trovarmi
             </h2>
             <p className="text-brown/70 text-lg max-w-2xl mx-auto">
-              Scopri tutte le mie creazioni sui miei negozi online preferiti
+              Scopri tutte le mie creazioni sui miei negozi online
             </p>
           </div>
           
@@ -198,10 +199,10 @@ export default function Home() {
         <div className="container-mobile">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-brown mb-4">
-              Seguimi per nuove creazioni ✨
+              Seguimi per nuove creazioni
             </h2>
             <p className="text-brown/70 text-lg max-w-2xl mx-auto">
-              Resta aggiornato sulle ultime creazioni kawaii e dietro le quinte del mondo SleepyLore
+              Resta aggiornato sulle ultime creazioni e sui progetti in corso
             </p>
           </div>
           

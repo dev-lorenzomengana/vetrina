@@ -26,14 +26,14 @@ export default function Header() {
           <div className="flex items-center space-x-3">
             <div className="relative w-10 h-10 animate-float">
               <Image
-                src="/images/sleepylore.png"
-                alt="SleepyLore Logo"
+                src="/images/ico.png"
+                alt="sleepylore Logo"
                 fill
                 className="object-contain"
                 priority
               />
             </div>
-            <span className="text-xl font-bold text-brown">SleepyLore</span>
+            <span className="text-xl font-bold text-brown">sleepylore</span>
           </div>
 
           {/* Desktop Navigation */}
