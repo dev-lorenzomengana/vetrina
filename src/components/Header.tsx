@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { FiMenu, FiX } from 'react-icons/fi'
 
 export default function Header() {
@@ -62,6 +63,12 @@ export default function Header() {
             >
               Shop
             </button>
+            <Link
+              href="/commissioni"
+              className="text-brown hover:text-aqua font-medium transition-colors"
+            >
+              Commissioni
+            </Link>
             <button
               onClick={() => scrollToSection('contact')}
               className="text-brown hover:text-aqua font-medium transition-colors"
@@ -108,6 +115,13 @@ export default function Header() {
               >
                 Shop
               </button>
+              <Link
+                href="/commissioni"
+                className="text-brown hover:text-aqua font-medium transition-colors text-left"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Commissioni
+              </Link>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="text-brown hover:text-aqua font-medium transition-colors text-left"

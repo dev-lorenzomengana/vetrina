@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 import { FiInstagram, FiMail } from 'react-icons/fi'
 import { SiTiktok, SiEtsy } from 'react-icons/si'
 import Header from '../components/Header'
@@ -163,33 +164,49 @@ export default function Home() {
               Dove trovarmi
             </h2>
             <p className="text-brown/70 text-lg max-w-2xl mx-auto">
-              Scopri tutte le mie creazioni sui miei negozi online
+              Scopri tutte le mie creazioni sui miei negozi online o richiedi una commissione personalizzata
             </p>
           </div>
           
           {/* Shop Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-lg mx-auto">
-            <a
-              href="https://etsy.com/shop/sleepylore"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary w-full sm:w-auto flex items-center justify-center space-x-3"
-            >
-              <SiEtsy className="text-2xl" />
-              <span>Visita il mio Etsy</span>
-            </a>
-            
-            <a
-              href="https://vinted.com/sleepylore"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary w-full sm:w-auto flex items-center justify-center space-x-3"
-            >
-              <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-                <span className="text-aqua font-bold text-sm">V</span>
-              </div>
-              <span>Scopri su Vinted</span>
-            </a>
+          <div className="space-y-8">
+            {/* Commissioni - Evidenziato */}
+            <div className="text-center">
+              <Link
+                href="/commissioni"
+                className="inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-aqua to-aqua/80 hover:from-aqua/90 hover:to-aqua/70 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              >
+                <span className="text-2xl">✨</span>
+                <span>Richiedi una Commissione Personalizzata</span>
+                <span className="text-2xl">✨</span>
+              </Link>
+              <p className="text-sm text-brown/60 mt-2">Trasforma la tua idea in realtà</p>
+            </div>
+
+            {/* Negozi Online */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
+              <a
+                href="https://etsy.com/shop/sleepylore"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary w-full sm:w-auto flex items-center justify-center space-x-3"
+              >
+                <SiEtsy className="text-2xl" />
+                <span>Visita il mio Etsy</span>
+              </a>
+              
+              <a
+                href="https://vinted.com/sleepylore"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary w-full sm:w-auto flex items-center justify-center space-x-3"
+              >
+                <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                  <span className="text-aqua font-bold text-sm">V</span>
+                </div>
+                <span>Scopri su Vinted</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
