@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
+# Copy environment file
+COPY .env.local ./
+
 # Install dependencies
 RUN npm ci --only=production
 

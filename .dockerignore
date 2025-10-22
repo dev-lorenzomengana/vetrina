@@ -16,8 +16,8 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 
-# Local env files
-.env*.local
+# Environment files (keep .env.local for Docker)
+.env
 .env
 
 # Vercel
