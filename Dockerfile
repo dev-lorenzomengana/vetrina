@@ -7,14 +7,17 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Copy environment file
-COPY .env.local ./
-
 # Install dependencies
 RUN npm ci --only=production
 
 # Copy the rest of the application code
 COPY . .
+
+# Copy environment file and set environment variables
+COPY .env.local ./
+ENV NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_h3pu3m6
+ENV NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_k3l9uxk
+ENV NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=9vybYH-J8tVEUy2zZ
 
 # Build the application
 RUN npm run build
