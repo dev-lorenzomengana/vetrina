@@ -23,11 +23,20 @@ export default function CommissioniPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
+    // Verifica che le variabili d'ambiente siano configurate
+    if (!process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 
+        !process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 
+        !process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
+      setSubmitStatus('config_error')
+      setIsSubmitting(false)
+      return
+    }
+
     try {
-      // Configurazione EmailJS - DA SOSTITUIRE CON I TUOI VALORI
+      // Configurazione EmailJS tramite variabili d'ambiente
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Da configurare su EmailJS
-        'YOUR_TEMPLATE_ID', // Da configurare su EmailJS
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
           from_name: formData.nome,
           from_email: formData.email,
@@ -38,9 +47,9 @@ export default function CommissioniPage() {
           budget: formData.budget,
           timeline: formData.timeline,
           references: formData.riferimenti,
-          to_email: 'sleepylore@email.com' // La tua email
+          to_email: process.env.NEXT_PUBLIC_EMAILJS_TO_EMAIL!
         },
-        'YOUR_PUBLIC_KEY' // Da configurare su EmailJS
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       )
       
       setSubmitStatus('success')
@@ -113,6 +122,15 @@ export default function CommissioniPage() {
                 <FiAlertCircle className="text-xl" />
                 <div>
                   <strong>Errore:</strong> Si è verificato un problema. Riprova o contattami direttamente via email.
+                </div>
+              </div>
+            )}
+
+            {submitStatus === 'config_error' && (
+              <div className="bg-yellow-100 border border-yellow-300 text-yellow-700 px-4 py-3 rounded-lg mb-6 flex items-center space-x-2">
+                <FiAlertCircle className="text-xl" />
+                <div>
+                  <strong>Configurazione mancante:</strong> EmailJS non è ancora configurato. Contattami direttamente via email per ora.
                 </div>
               </div>
             )}

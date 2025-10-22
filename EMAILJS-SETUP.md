@@ -50,35 +50,25 @@ Ricevuto dal sito: https://vetrina.lorenzomengana.com/commissioni
 1. **Dashboard → Account → Public Key**
 2. **Copia il valore** (es: `user_ABC123xyz`)
 
-### 5. Configura il Codice
-Modifica il file `/src/app/commissioni/page.tsx`:
+### 5. Configura le Variabili d'Ambiente
+1. **Copia il template**: `cp .env.example .env.local`
+2. **Modifica `.env.local`** con i tuoi valori:
 
-```typescript
-// Sostituisci queste righe (circa riga 30):
-await emailjs.send(
-  'YOUR_SERVICE_ID',     // → 'service_abc123'
-  'YOUR_TEMPLATE_ID',    // → 'template_xyz789'
-  {
-    // ... parametri email
-    to_email: 'sleepylore@email.com'  // → LA TUA EMAIL
-  },
-  'YOUR_PUBLIC_KEY'      // → 'user_ABC123xyz'
-)
-```
-
-### 6. Valori da sostituire:
-```typescript
-SERVICE_ID: 'service_abc123'       // Dal punto 2
-TEMPLATE_ID: 'template_xyz789'     // Dal punto 3  
-PUBLIC_KEY: 'user_ABC123xyz'       // Dal punto 4
-EMAIL: 'la-tua-email@gmail.com'    // La tua email
-```
-
-### 7. Test e Deploy
 ```bash
-# Dopo aver configurato i valori:
+# EmailJS Configuration
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_abc123      # Dal punto 2
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_xyz789    # Dal punto 3  
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=user_ABC123xyz      # Dal punto 4
+NEXT_PUBLIC_EMAILJS_TO_EMAIL=la-tua-email@gmail.com # La tua email
+```
+
+**⚠️ IMPORTANTE**: Il file `.env.local` non verrà committato su Git per sicurezza.
+
+### 6. Test e Deploy
+```bash
+# Dopo aver configurato le variabili d'ambiente:
 cd /home/opc/apps/vetrina
-./quick-deploy.sh "Aggiungi sistema commissioni con EmailJS"
+./quick-deploy.sh "Configura EmailJS con variabili d'ambiente"
 ```
 
 ## 🎯 Cosa Succedera:
