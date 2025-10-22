@@ -3,6 +3,7 @@ import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import Link from 'next/link'
 import { FiArrowLeft, FiMail, FiCheck, FiAlertCircle } from 'react-icons/fi'
+import SuccessPopup from '../../components/SuccessPopup'
 
 export default function CommissioniPage() {
   const [formData, setFormData] = useState({
@@ -18,6 +19,7 @@ export default function CommissioniPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState('')
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -52,6 +54,8 @@ export default function CommissioniPage() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       )
       
+      // Mostra popup invece del banner
+      setShowSuccessPopup(true)
       setSubmitStatus('success')
       setFormData({
         nome: '', email: '', telefono: '', tipoCommissione: '',
@@ -108,15 +112,6 @@ export default function CommissioniPage() {
 
           {/* Form */}
           <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-            {submitStatus === 'success' && (
-              <div className="bg-green-100 border border-green-300 text-green-700 px-4 py-3 rounded-lg mb-6 flex items-center space-x-2">
-                <FiCheck className="text-xl" />
-                <div>
-                  <strong>Richiesta inviata!</strong> Ti contatterò entro 24-48 ore per discutere la tua commissione.
-                </div>
-              </div>
-            )}
-
             {submitStatus === 'error' && (
               <div className="bg-red-100 border border-red-300 text-red-700 px-4 py-3 rounded-lg mb-6 flex items-center space-x-2">
                 <FiAlertCircle className="text-xl" />
@@ -345,6 +340,12 @@ export default function CommissioniPage() {
           </div>
         </div>
       </main>
+
+      {/* Success Popup */}
+      <SuccessPopup 
+        isOpen={showSuccessPopup} 
+        onClose={() => setShowSuccessPopup(false)} 
+      />
     </div>
   )
 }
