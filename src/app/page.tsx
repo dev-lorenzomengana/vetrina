@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiInstagram, FiMail } from 'react-icons/fi'
-import { SiTiktok, SiEtsy } from 'react-icons/si'
+import { SiTiktok, SiEtsy, SiTelegram } from 'react-icons/si'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import GalleryCard from '../components/GalleryCard'
@@ -18,6 +18,44 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Header />
+      
+      {/* Banner In Costruzione */}
+      <div className="bg-gradient-to-r from-brown via-brown/90 to-brown text-white py-4 px-4 shadow-lg relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
+        <div className="container-mobile relative z-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl animate-bounce">🚧</span>
+              <p className="text-lg font-semibold">
+                Sito in costruzione!
+              </p>
+            </div>
+            <p className="text-white/90">
+              Seguimi per restare aggiornato:
+            </p>
+            <div className="flex gap-3">
+              <a
+                href="https://t.me/+q2zmlcaSgE44ZGVk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105"
+              >
+                <SiTelegram className="text-xl" />
+                <span className="font-medium">Telegram</span>
+              </a>
+              <a
+                href="https://instagram.com/sleepylore__"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105"
+              >
+                <FiInstagram className="text-xl" />
+                <span className="font-medium">Instagram</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       
       {/* Hero Section */}
       <section id="home" className="bg-gradient-to-br from-aqua to-aqua/80 min-h-screen flex items-center pt-20">
@@ -37,7 +75,7 @@ export default function Home() {
                 </div>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4">
-                sleepylore <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl">🦥</span>
+                sleepylore
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto px-4">
                 Accessori handmade unici e di qualità
@@ -185,7 +223,7 @@ export default function Home() {
 
             {/* Negozi Online */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
-              <a
+              {/* <a
                 href="https://etsy.com/shop/sleepylore"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -193,7 +231,7 @@ export default function Home() {
               >
                 <SiEtsy className="text-2xl" />
                 <span>Visita il mio Etsy</span>
-              </a>
+              </a> */}
               
               <a
                 href="https://vinted.com/sleepylore"
@@ -226,7 +264,7 @@ export default function Home() {
           {/* Social Links */}
           <div className="flex flex-wrap justify-center gap-6">
             <a
-              href="https://instagram.com/sleepylore"
+              href="https://instagram.com/sleepylore__"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-3 bg-white px-6 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-brown hover:text-aqua"
@@ -236,22 +274,14 @@ export default function Home() {
             </a>
             
             <a
-              href="https://tiktok.com/@sleepylore"
+              href="https://t.me/+q2zmlcaSgE44ZGVk"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-3 bg-white px-6 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-brown hover:text-aqua"
             >
-              <SiTiktok className="text-2xl" />
-              <span className="font-medium">TikTok</span>
-            </a>
-            
-            <a
-              href="mailto:hello@sleepylore.com"
-              className="flex items-center space-x-3 bg-white px-6 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-brown hover:text-aqua"
-            >
-              <FiMail className="text-2xl" />
-              <span className="font-medium">Email</span>
-            </a>
+              <SiTelegram className="text-2xl" />
+              <span className="font-medium">Telegram</span>
+            </a> 
           </div>
         </div>
       </section>
