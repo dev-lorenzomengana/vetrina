@@ -20,7 +20,7 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+    <header className="fixed top-16 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
       <div className="container-mobile">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}

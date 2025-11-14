@@ -1,0 +1,52 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "src": "/images/charm1.jpg",
+      "alt": "Accessorio anime",
+      "title": "Accessorio Anime"
+    },
+    {
+      "id": 2,
+      "src": "/images/charm2.jpg",
+      "alt": "Portachiavi musicale",
+      "title": "Portachiavi Note"
+    },
+    {
+      "id": 3,
+      "src": "/images/charm3.jpg",
+      "alt": "Spilletta gaming",
+      "title": "Spilletta Gaming"
+    },
+    {
+      "id": 4,
+      "src": "/images/charm4.jpg",
+      "alt": "Ciondolo artigianale",
+      "title": "Ciondolo Artigianale"
+    },
+    {
+      "id": 5,
+      "src": "/images/charm5.jpg",
+      "alt": "Accessorio pop culture",
+      "title": "Accessorio Pop"
+    },
+    {
+      "id": 6,
+      "src": "/images/charm6.jpg",
+      "alt": "Charm personalizzato",
+      "title": "Charm Personalizzato"
+    },
+    {
+      "id": 7,
+      "src": "/images/charm7.jpg",
+      "alt": "Portachiavi tematico",
+      "title": "Portachiavi Tematico"
+    },
+    {
+      "id": 8,
+      "src": "/images/charm8.jpg",
+      "alt": "Creazione originale",
+      "title": "Creazione Originale"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "commissioni": [
+    {
+      "id": 1,
+      "tipo": "Portachiavi",
+      "descrizione": "Portachiavi personalizzato handmade",
+      "prezzoMin": 8,
+      "prezzoMax": 15,
+      "tempoRealizzazione": "1-2 settimane"
+    },
+    {
+      "id": 2,
+      "tipo": "Charm",
+      "descrizione": "Charm decorativo per borse o zaini",
+      "prezzoMin": 10,
+      "prezzoMax": 18,
+      "tempoRealizzazione": "1-2 settimane"
+    },
+    {
+      "id": 3,
+      "tipo": "Spilletta",
+      "descrizione": "Spilletta/Pin personalizzata",
+      "prezzoMin": 5,
+      "prezzoMax": 12,
+      "tempoRealizzazione": "1 settimana"
+    },
+    {
+      "id": 4,
+      "tipo": "Ciondolo",
+      "descrizione": "Ciondolo per collane",
+      "prezzoMin": 12,
+      "prezzoMax": 25,
+      "tempoRealizzazione": "2-3 settimane"
+    },
+    {
+      "id": 5,
+      "tipo": "Personalizzato",
+      "descrizione": "Creazione completamente personalizzata",
+      "prezzoMin": 15,
+      "prezzoMax": 50,
+      "tempoRealizzazione": "2-4 settimane"
+    }
+  ]
+}

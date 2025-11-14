@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiInstagram } from 'react-icons/fi'
-import { SiTelegram } from 'react-icons/si'
+import { SiTelegram, SiPaypal } from 'react-icons/si'
 import { BiHome, BiEnvelope } from 'react-icons/bi'
 
 export default function Linktree() {
@@ -31,6 +31,14 @@ export default function Linktree() {
       external: true
     },
     {
+      title: 'PayPal',
+      description: 'Supportami con una donazione',
+      href: 'https://www.paypal.me/loremeng',
+      icon: <SiPaypal className="text-3xl" />,
+      color: 'from-[#00457C] to-[#00457C]/80',
+      external: true
+    },
+    {
       title: 'Commissioni',
       description: 'Richiedi una commissione personalizzata',
       href: '/commissioni',
@@ -41,9 +49,20 @@ export default function Linktree() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-beige/30 via-white to-aqua/10 py-12 px-4">
-      <div className="max-w-2xl mx-auto">
+      {/* Banner In Costruzione */}
+      <div className="fixed top-0 left-0 right-0 z-[100] bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 text-brown py-3 px-4 shadow-xl border-b-4 border-yellow-600">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-center gap-2 text-center">
+            <span className="text-2xl animate-bounce">🚧</span>
+            <span className="font-bold text-base sm:text-lg">SITO IN COSTRUZIONE</span>
+            <span className="text-2xl animate-bounce">🚧</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-2xl mx-auto pt-8">
         {/* Header con logo e nome */}
-        <div className="text-center mb-12 animate-fadFfe-in">
+        <div className="text-center mb-12 animate-fade-in">
           <div className="flex justify-center mb-6">
             <div className="relative w-24 h-24 sm:w-32 sm:h-32 animate-float">
               <Image

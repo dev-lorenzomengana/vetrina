@@ -1,4 +1,5 @@
 'use client'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiInstagram, FiMail } from 'react-icons/fi'
@@ -7,7 +8,24 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import GalleryCard from '../components/GalleryCard'
 
+interface GalleryImage {
+  id: number
+  src: string
+  alt: string
+  title: string
+}
+
 export default function Home() {
+  const [galleryImages, setGalleryImages] = useState<GalleryImage[]>([])
+
+  useEffect(() => {
+    // Carica immagini dalla gallery dinamica
+    fetch('/api/admin/gallery')
+      .then(res => res.json())
+      .then(data => setGalleryImages(data.images || []))
+      .catch(err => console.error('Errore caricamento gallery:', err))
+  }, [])
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -17,48 +35,49 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <Header />
-      
-      {/* Banner In Costruzione */}
-      <div className="bg-gradient-to-r from-brown via-brown/90 to-brown text-white py-4 px-4 shadow-lg relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
-        <div className="container-mobile relative z-10">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl animate-bounce">🚧</span>
-              <p className="text-lg font-semibold">
-                Sito in costruzione!
-              </p>
+      {/* Banner In Costruzione - Sopra tutto */}
+      <div className="fixed top-0 left-0 right-0 z-[100] bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 text-brown py-3 px-4 shadow-xl border-b-4 border-yellow-600">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-center">
+            <div className="flex items-center gap-2 font-bold text-lg sm:text-xl">
+              <span className="text-3xl animate-bounce">🚧</span>
+              <span>SITO IN COSTRUZIONE</span>
+              <span className="text-3xl animate-bounce">🚧</span>
             </div>
-            <p className="text-white/90">
-              Seguimi per restare aggiornato:
-            </p>
-            <div className="flex gap-3">
-              <a
-                href="https://t.me/+q2zmlcaSgE44ZGVk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105"
-              >
-                <SiTelegram className="text-xl" />
-                <span className="font-medium">Telegram</span>
-              </a>
-              <a
-                href="https://instagram.com/sleepylore__"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105"
-              >
-                <FiInstagram className="text-xl" />
-                <span className="font-medium">Instagram</span>
-              </a>
+            <div className="hidden sm:block text-brown/60">|</div>
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
+              <span className="font-semibold">Seguimi:</span>
+              <div className="flex gap-2">
+                <a
+                  href="https://t.me/+q2zmlcaSgE44ZGVk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 bg-brown hover:bg-brown/90 text-white px-3 py-1.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm font-medium"
+                >
+                  <SiTelegram className="text-lg" />
+                  <span>Telegram</span>
+                </a>
+                <a
+                  href="https://instagram.com/sleepylore__"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 bg-brown hover:bg-brown/90 text-white px-3 py-1.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm font-medium"
+                >
+                  <FiInstagram className="text-lg" />
+                  <span>Instagram</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div className="pt-32 sm:pt-28">
+        <Header />
+      </div>
       
       {/* Hero Section */}
-      <section id="home" className="bg-gradient-to-br from-aqua to-aqua/80 min-h-screen flex items-center pt-20">
+      <section id="home" className="bg-gradient-to-br from-aqua to-aqua/80 min-h-screen flex items-center pt-32">
         <div className="container-mobile">
           <div className="text-center space-y-8">
             {/* Logo e Titolo */}
@@ -150,47 +169,21 @@ export default function Home() {
           
           {/* Grid Gallery */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <GalleryCard 
-              imageSrc="/images/charm1.jpg" 
-              alt="Accessorio anime" 
-              title="Accessorio Anime" 
-            />
-            <GalleryCard 
-              imageSrc="/images/charm2.jpg" 
-              alt="Portachiavi musicale" 
-              title="Portachiavi Note" 
-            />
-            <GalleryCard 
-              imageSrc="/images/charm3.jpg" 
-              alt="Spilletta gaming" 
-              title="Spilletta Gaming" 
-            />
-            <GalleryCard 
-              imageSrc="/images/charm4.jpg" 
-              alt="Ciondolo artigianale" 
-              title="Ciondolo Artigianale" 
-            />
-            <GalleryCard 
-              imageSrc="/images/charm5.jpg" 
-              alt="Accessorio pop culture" 
-              title="Accessorio Pop" 
-            />
-            <GalleryCard 
-              imageSrc="/images/charm6.jpg" 
-              alt="Charm personalizzato" 
-              title="Charm Personalizzato" 
-            />
-            <GalleryCard 
-              imageSrc="/images/charm7.jpg" 
-              alt="Portachiavi tematico" 
-              title="Portachiavi Tematico" 
-            />
-            <GalleryCard 
-              imageSrc="/images/charm8.jpg" 
-              alt="Creazione originale" 
-              title="Creazione Originale" 
-            />
+            {galleryImages.map((image) => (
+              <GalleryCard 
+                key={image.id}
+                imageSrc={image.src} 
+                alt={image.alt} 
+                title={image.title} 
+              />
+            ))}
           </div>
+          
+          {galleryImages.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-brown/60">Caricamento gallery...</p>
+            </div>
+          )}
         </div>
       </section>
 
